@@ -40,14 +40,14 @@
 
 % Add an abstract.
 \abstract{
-This project aims to determine what matters in determining the appeal of a game or productivity app on the Android market. Adding this test sentence by Paola.
+This project aims to determine what matters in determining the appeal of a game or productivity app on the Android market.
 }
 
 \section{Motivation}
 
 \subsection{What problem will your work address?}
 
-We are \textbf{attempting} to learn how much first impressions might impact the actual adoption of an Android game or productivity application. Mainly, we will examine what factors relevant to first impressions may contribute to the success of such apps. We plan to measure success through popularity (i.e. downloads, ratings). We hope to determine a good model for predicting application successes by examining observable measures for success of mobile applications on the Android Store.
+We are attempting to learn how much first impressions might impact the actual adoption of an Android game or productivity application. Mainly, we will examine what factors relevant to first impressions may contribute to the success of such apps. We plan to measure success through popularity (i.e. downloads, ratings). We hope to determine a good model for predicting application successes by examining observable measures for success of mobile applications on the Android Store.
 
 \subsection{Why is it important?}
 
@@ -65,9 +65,11 @@ Granted, many factors go into the success of game and productivity apps. Games, 
 
 \subsection{How are you going to go after the problem?}
 
-We plan to leverage the common sense of crowds to gauge these facets and use this data to offer developers an estimate of the success of an app. We plan to develop a statistical model, perhaps based on regression from data gained from the crowd. To obtain data, we plan to scrape the names, icons, and descriptions of free game and productivity apps, so price does not bias one game over another. \\
+We plan to leverage the common sense of crowds to gauge these facets and use this data to offer developers an estimate of the success of an app. We plan to develop a statistical model, perhaps based on regression from data gained from the crowd. To obtain data, we plan to scrape the names, icons, and descriptions of free game and productivity apps, so price does not bias one game over another. We plan to analyze Android apps since Android provides downloads statistics for apps albeit in a discretized manner. \\
 
-Afterwards, we plan to develop a questionnaire that asks subjects to rate apps based on the different qualities on a Likert scale. These qualities could include how much subjects trust app pages, whether the pages feel fun, or how clear does the page describe the app’s purposes and functionalities. We plan to gamify this process by challenging subjects to test their entrepreneurial gut. We also plan to have Turkers be subjects. \\
+Afterwards, we plan to develop a questionnaire that asks subjects to rate apps based on the different qualities on a Likert scale. These qualities could include how much subjects trust app pages, whether the pages feel fun, or how clear does the page describe the app’s purposes and functionalities. We plan to gamify this process by challenging subjects to test their entrepreneurial gut. We also plan to have Turkers be subjects. We plan to scrape about 500 recent apps and will likely need several thousand, perhaps 5000 subjects. \\
+
+To prevent biases, we should also ask users if they had seen the current app before asking them questions about it. We will likely discount users who have seen the app. Currently, we plan on just performing the analysis on recently loaded apps. We might also scrap apps that had been on the market for a while and compare the results between these two groups. We also plan on just scraping free apps so that price is not a confounding variable in our experiment. We should also ask subjects about their smartphone habits - are they familiar with smartphones and apps on them? Or have they never used a smart phone. \\
 
 After obtaining this data, we plan to perform a regression to determine how much each quality matters in determining the success of game apps. We then plan to use this regression result as a tool to predict the success of other apps. We also plan to talk to Katharina Reinecke about how else we can interpret our results.
 
@@ -140,9 +142,12 @@ Your technology should be finalized by now (based on the results from the previo
 
 \section{Related Work}
 
+\subsection{Quantifying Visual Preferences around the World}
+This paper analyzes how people from different demographics react to how colorful web pages are. The experiment collected ratings of visual appeal from about forty thousand subjects on 430 web pages of varying complexities and colorfulness. The qualities that subjects performed ratings on include trustworthiness and  of the web page. The experiment found that certain demographics such as Russians and Fins did not find colorful web pages as appealing as did demographics such as Macedonians. \\
 
+This paper relates to our work since we too seek to find factors that heighten appeal. Specifically, we seek factors that maximize the appeal of pages for game and productivity apps on the Android platform. Icon color could be one of the factors we analyze. We could also borrow off of many ideas from the methodology. For instance, the researchers motivated individuals to do their test by comparing their results to other individuals at large. Our method for performing regression might be more complicated though since we analyze more factors than just one (say color saturation of a page). \\
 
-\subsection{Marketing Research}
+Overall, I enjoyed reading this paper. The results showed that most people preferred a moderate level of color saturation in web pages. I feel that some of the conclusions about specific demographics of people and their color preferences succumbed to a small amount of response bias though. In some countries, only a small portion of residents have access to the internet.
 
 \subsection{The Business of iPhone App Development: Making and Marketing Apps that Succeed}
 
