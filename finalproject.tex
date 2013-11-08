@@ -1,0 +1,117 @@
+\documentclass{sigchi}
+
+% Command to override the default ACM copyright statement (e.g. for preprints). 
+% Consult the conference website for the camera-ready copyright statement.
+\toappear{Permission to make digital or hard copies of all or part of this work for personal or classroom use is 	granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
+{\emph{CHI'14}}, April 26--May 1, 2014, Toronto, Canada. \\
+Copyright \copyright~2014 ACM ISBN/14/04...\$15.00.
+}
+
+% Arabic page numbers for submission. 
+% Remove this line to eliminate page numbers for the camera ready copy
+\pagenumbering{arabic}
+
+% Load basic packages
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphics} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, 
+% to give it a fighting chance of not being over-written, 
+% since its job is to redefine many LaTeX commands.
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+pdftitle={SIGCHI Conference Proceedings Format},
+pdfauthor={LaTeX},
+pdfkeywords={SIGCHI, proceedings, archival format},
+bookmarksnumbered,
+pdfstartview={FitH},
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black,
+breaklinks=true,
+}
+
+% create a shortcut to typeset table headings
+\newcommand\tabhead[1]{\small\textbf{#1}}
+
+
+% End of preamble. Here it comes the document.
+\begin{document}
+
+\title{Predicting Mobile Application Success Based on First Impressions}
+
+\numberofauthors{3}
+\author{
+  \alignauthor Paola Mariselli\\
+    \affaddr{Harvard SEAS}\\
+    \affaddr{35 Oxford St.}\\
+    \email{paolamariselli@fas.harvard.edu}\\
+  \alignauthor Sierra Okolo\\
+    \affaddr{Harvard SEAS}\\
+    \affaddr{35 Oxford St.}\\
+    \email{sokolo@fas.harvard.edu}\\
+  \alignauthor Chi Zeng\\
+    \affaddr{Harvard College}\\
+    \affaddr{Harvard Yard Pl.}\\
+    \email{czeng@college.harvard.edu}\\
+}
+
+\maketitle
+
+\begin{abstract}
+This abstract is in construction.
+\end{abstract}
+
+\keywords{Mobile Application; First Impression; Prediction}
+
+\category{H.5.2.}{Information Interfaces and Presentation (e.g. HCI)}{User Interfaces}
+
+\input{sections/intro}
+\input{sections/relatedwork}
+\input{sections/approach}
+\input{sections/experiment}
+\input{sections/results}
+
+\bibliographystyle{acm-sigchi}
+\bibliography{finalproject}
+
+\end{document}
+
+
+%% == Chi's section of examples == %%
+% = Includin a Figure = %
+%\begin{figure}
+%\centering
+%\includegraphics[width=1in]{space.jpg} 
+
+%\caption{Another sample figure}
+%\label{figure-sample2}
+%\end{figure}
+
+% = Generate a bibliography. = %
+%\bibliography{proposal}
+%\bibliographystyle{unsrt}
+
+%% == Paola's section of examples == %%
+%\textcolor{red}{Mandatory section to be included in your final version.}
+%~\cite{tohidi06:getting,tohidi06:user}
