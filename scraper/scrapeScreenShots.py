@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 #
-# Scrapes games.
+# Scrapes games' screenshots. Saves into a CSV file in the format
+# "Name", "App Page URL", "Screenshot URL"
 #
 
 import bs4
 import csv
 import codecs
+import datetime
+import sys
 import urllib2
 
 import appUrls
@@ -19,7 +22,7 @@ urls = gameUrls.gameUrls
 # urls = appUrls.appUrls
 
 # open a csv file for writing into.
-dataFile = open('gameApps.csv', mode='w')
+dataFile = open('screenshotsGameApps.csv', mode='w')
 dataFile.write(codecs.BOM_UTF8)
 
 # create a writer for writing csv data.
@@ -84,48 +87,24 @@ if __name__ == '__main__':
     # get the name of the app.
     appNameNode = soup.find('div', class_='document-title')
     appName = processUnicode(appNameNode.get_text().strip())
-
-    # get the category of the app.
-    categoryNode = soup.find('span', itemprop='genre')
-    category = processUnicode(getCategory(categoryNode.get_text().strip()))
-    if productivityAppsOnly and category != "Productivity":
-        # only scrape productivity apps.
-        print 'Ignoring ' + category + ' app ' + appName
-        continue
-
-    # append the app name.
     row.append(appName)
 
-    # includes the category of the game.
-    row.append(category)
+    # get the URL
+    row.append(url)
 
-    # get the icon URL.
-    iconNode = soup.find('img', class_='cover-image')
-    iconUrl = iconNode['src']
-    row.append(iconUrl)
+    # get the first screenshot.
+    screenShotUrlNode = soup.find('img', class_='screenshot')
+    if not screenShotUrlNode:
+      # keep going if no screenshot found.
+      continue
 
-    # get discretized number of installs.
-    numInstallsNode = soup.find('div', itemprop='numDownloads')
-    numDownloads = processUnicode(numInstallsNode.get_text().strip())
-    row.append(numDownloads)
+    screenShotUrl = processUnicode(screenShotUrlNode['src'].strip())
+    row.append(screenShotUrl)
 
-    # get the app release date.
-    appUpdatedDateNode = soup.find('div', class_='document-subtitle')
-    updateDate = processUnicode(appUpdatedDateNode.get_text()[1:].strip())
-    row.append(updateDate)
-
-    # get the app's description.
-    descriptionNode = soup.find('div', class_='app-orig-desc')
-    listOfElements = map(unicode, descriptionNode.contents);
-    print listOfElements
-    description = processUnicode(''.join(listOfElements))
-    row.append(description)
-
-    # write our row into the csv file.
+    # write the data to a CSV file.
     writer.writerow(row)
 
     # update status.
     numAppsProcessed += 1
     print 'Processed ' + str(numAppsProcessed) + ' apps. Last one: ' + \
         appName
-
