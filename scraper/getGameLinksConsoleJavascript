@@ -1,0 +1,22 @@
+function getLinks() {
+  var links = $(".card-content a.title");
+
+  // create the list of links.
+  var urls = [];
+  for (var i = 0; i < links.length; ++i) {
+    urls.push(links[i].href);
+  }
+
+  // write output in new window.
+  var linkDump = JSON.stringify(urls);
+  var dumpNode = $('<p>').text(linkDump).css('margin', '50px');
+  $('body').append(dumpNode);
+}
+
+var jq = document.createElement('script');
+jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
+document.getElementsByTagName('head')[0].appendChild(jq);
+// ... give time for script to load, then type.
+jQuery.noConflict();
+
+setTimeout(getLinks, 2000); 
