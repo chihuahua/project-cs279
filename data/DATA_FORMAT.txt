@@ -1,0 +1,4 @@
+The format of the scores csv file is
+
+Person ID, Score (%), Phone Usage, App Download Frequency, App Usage, Age, Gender, Country, Date and Time, New Survey?, Time and Date, Source
+
