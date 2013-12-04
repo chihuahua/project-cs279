@@ -1,4 +1,4 @@
-PersonID,Score,PhoneUsage,AppDownloadFrequency,AppUsage,Age,Gender,Country,Time,NewSurvey,Source
+PersonID,Score,PhoneUsage,AppDownloadFrequency,AppUsage,Age,Gender,Country,NewSurvey,Time,Source
 1,40.0,DAILY,MONTHLY,DAILY,20 - 24,male,US,0,2013-11-16 22:37:36,facebook
 5,50.0,DAILY,MONTHLY,DAILY,20 - 24,female,US,0,2013-11-16 22:42:42,facebook
 7,30.0,DAILY,YEARLY,DAILY,20 - 24,female,US,0,2013-11-16 22:46:37,facebook
